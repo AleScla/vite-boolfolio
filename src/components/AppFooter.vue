@@ -5,11 +5,11 @@ export default {
 </script>
 
 <template>
-  <footer>
+  <footer class="my-4">
     <div class="container">
       <div class="row">
           <div class="col">
-            COPYRIGHTS BY <a target="_blank"  href="https://github.com/antoniostassi">Antonio Stassi</a> and <a target="_blank" href="https://github.com/AleScla">Alessandro Sclafani</a>
+            COPYRIGHTS BY SPLENDIDI: <a target="_blank"  href="https://github.com/antoniostassi">Antonio Stassi</a> and <a target="_blank" href="https://github.com/AleScla">Alessandro Sclafani</a>
           </div>
       </div>
     </div>
@@ -17,6 +17,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+  
 
 </style>
