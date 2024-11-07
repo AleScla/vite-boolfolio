@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios';
+
 
 
 export default {
@@ -7,12 +7,7 @@ export default {
     
   },
   // 2) Dichiarazione del componente
-  components: {
 
-  },
-  methods: {
-    
-  }
 }
 </script>
 

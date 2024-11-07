@@ -1,6 +1,6 @@
 <script>
 import AppHeader from '../components/AppHeader.vue';
-import AppMain from '../components/AppMain.vue';
+
 import AppFooter from '../components/AppFooter.vue';
 
 
@@ -10,7 +10,7 @@ export default {
   },
   components: {
     AppHeader,
-    AppMain,
+
     AppFooter
   },
 }
@@ -20,7 +20,11 @@ export default {
 <template>
     <AppHeader />
         
-    <AppMain />
+    <div class="container">
+        <h1 class="fs-5">
+            404: Pokemon non trovato
+        </h1>
+    </div>
 
     <AppFooter />
 </template>

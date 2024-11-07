@@ -1,6 +1,8 @@
 import {createRouter, createWebHistory} from 'vue-router';
 import Home from './pages/Home.vue';
 import Show from './pages/Show.vue';
+import NotFound from './pages/NotFound.vue';
+
 
 
 export const router = createRouter({
@@ -12,9 +14,14 @@ export const router = createRouter({
             component: Home
         },
         {
-            path: '/pokemon/{id}',
+            path: '/pokemon/:id',
             name: 'show',
             component: Show
+        },
+        {
+            path: '/not-found',
+            name: 'not-found',
+            component: NotFound
         }
     ]
 })

@@ -1,15 +1,20 @@
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
-      pokemons = [],
+      pokemons: [],
     }
   },
+  mounted(){
+    this.getPokemonsData();
+  },
   methods:{
-    getPokemonData(){
-      axios.get('linkapi')
+    getPokemonsData(){
+      axios.get('http://127.0.0.1:8000/api/pokemon')
           .then((res)=>{
-            this.pokemons = res.data
+            this.pokemons = res.data.data
           })
     }
   }
@@ -31,12 +36,18 @@ export default {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">ID pokemon</th>
-                  <td>nome poke</td>
-                  <td>nome tipo</td>
+                <tr v-for="pokemon in pokemons">
+                  <th scope="row">{{ pokemon.id }}</th>
+                  <td class="text-capitalize">{{pokemon.name}}</td>
                   <td>
-                    <router-link :to="{name:'show', params:{id:'idacaso'}}" class="btn btn-primary btn-sm">
+                    <span v-for="type in pokemon.types"
+                     class="badge text-capitalize bg-secondary-subtle me-2"
+                     :style="{color:type.color}">
+                      {{type.name}}
+                    </span>
+                  </td>
+                  <td>
+                    <router-link :to="{name:'show', params:{id: pokemon.id}}" class="btn btn-primary btn-sm">
                       Visualizza info Pokemon
                     </router-link>
                   </td>
@@ -51,6 +62,5 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as *;
-
 
 </style>
